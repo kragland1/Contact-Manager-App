@@ -1,0 +1,15 @@
+﻿@model Contact
+
+<h2>Delete Contact</h2>
+
+<form asp-controller="Contact" asp-action="Delete" method="post">
+    <input type= "hidden" asp-for="ContactId"/>
+
+    <div>Do you really want to delete <span class="fw-bold">@Model.Firstname @Model.Lastname</span></div>
+
+    <button type="submit" class="btn btn-primary">Yes</button>
+
+    <a asp-controller="Home" asp-action="Details" asp-route-id="@Model.ContactId" asp-route-slug="@Model.Slug"
+        class="btn btn-secondary">No</a>
+
+</form>

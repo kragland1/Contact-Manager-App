@@ -1,0 +1,47 @@
+﻿@model Contact
+
+<h2>Contact Details</h2>
+
+<table class="table mt-2">
+    <tbody>
+            <tr>
+                <td>
+                    Name:
+                </td>
+                <td>
+                    @Model.Firstname
+                    @Model.Lastname
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   Phone:
+                </td>
+                <td>
+                   @Model.Phone
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>@Model.Email</td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>@Model.Category.Name</td>
+            </tr>
+            <tr>
+                <td>Date Added:</td>
+                <td>@Model.DateAdded.ToShortDateString() at @Model.DateAdded.ToShortTimeString()</td>
+            </tr>
+    </tbody>
+</table>
+<a asp-action="Edit" asp-controller="Contact" asp-route-id="@Model.ContactId" class="btn btn-primary"
+   asp-route-slug="@Model.Slug">
+    Edit
+</a>
+<a asp-action="Delete" asp-controller="Contact" asp-route-id="@Model.ContactId" class="btn btn-primary"
+   asp-route-slug="@Model.Slug">
+    Delete
+</a>
+<a asp-controller="Home" asp-action="Index"
+   class="btn btn-primary">Home</a>
